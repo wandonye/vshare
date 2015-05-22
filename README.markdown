@@ -1,21 +1,28 @@
 # INTRODUCTION
 
 
-Reset local debug env.
+## Reset local debug env.
+
 
 rm -rf /tmp/instance
+
 mkdir /tmp/instance
+
 python manage.py initdb
 
-To setup:
+## To setup:
+
 source activate vshare
+
 python setup.py install
 
-To run:
+
+## To run:
+
 python manage.py run
 
 
-Translation:
+## Translation:
 python setup.py compile_catalog --directory `find -name translations` --locale zh -f"
 
 
