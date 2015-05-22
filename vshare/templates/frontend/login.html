@@ -1,0 +1,12 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = "Sign in" %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<div class="center-block" style="width:300px;margin-top:40px;">
+    {{ render_form(url_for('frontend.login'), form)}}
+	{{ _("Sign in with") }} <a href="{{ url_for('frontend.login_openid') }}">OpenID</a>.
+</div>
+{% endblock %}
