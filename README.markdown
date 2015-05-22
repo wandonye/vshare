@@ -20,7 +20,7 @@ python setup.py compile_catalog --directory `find -name translations` --locale z
 
 
 
-![homepage screenshot](http://github.com/wandonye/vshare/raw/master/screenshots/flask-bone-homepage-screenshot.png)
+![homepage screenshot](http://github.com/wandonye/vshare/raw/master/screenshots/vshare_screenshot.png)
 
 ## FEATURES
 
