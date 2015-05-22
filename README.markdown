@@ -1,30 +1,6 @@
 # INTRODUCTION
 
 
-### Reset local debug env.
-
-
-rm -rf /tmp/instance
-
-mkdir /tmp/instance
-
-python manage.py initdb
-
-### To setup:
-
-source activate vshare
-
-python setup.py install
-
-
-### To run:
-
-python manage.py run
-
-
-### Translation:
-python setup.py compile_catalog --directory `find -name translations` --locale zh -f"
-
 
 
 ![homepage screenshot](http://github.com/wandonye/vshare/raw/master/screenshots/vshare_screenshot.png)
@@ -61,22 +37,36 @@ Pre-required:
 - Ubuntu (should be fine in other linux distro)
 - git
 - pip
-- fabric
-- sqlite
-- virtualenv
+- postgresql
+- virtualenv or conda
 - apache + mod\_wsgi
 
 Clone.
 
-    git clone https://github.com/imwilsonxu/vshare.git vshare
+    git clone https://github.com/wandonye/vshare.git vshare
 
-virtualenv.
 
-    fab setup
+Reset local debug env:
 
-Debug.
+- rm -rf /tmp/instance
 
-    fab d
+- mkdir /tmp/instance
+
+- python manage.py initdb
+
+To setup:
+
+- source activate vshare
+- python setup.py install
+
+To run:
+
+- python manage.py run
+
+
+Translation:
+
+-python setup.py compile_catalog --directory `find -name translations` --locale zh -f"
 
 Open `http://127.0.0.1:5000`, done!
 
@@ -101,9 +91,6 @@ vhost.
         Allow from all
     </Directory>
 
-virtualenv.
-
-    fab setup
 
 **IMPORTANT**:
 
@@ -114,7 +101,6 @@ virtualenv.
 
     ├── app.wsgi                (mod_wsgi wsgi config)
     ├── CHANGES
-    ├── fabfile.py              (fabric file)
     ├── vshare                   (main app)
     │   ├── api                 (api module)
     │   ├── app.py              (create flask app)
@@ -140,6 +126,20 @@ virtualenv.
     │   │   ├── settings
     │   │   └── user
     │   ├── translations        (i18n)
+    │   ├── chat                (chat module)
+    │   │   ├── models.py
+    │   ├── admin                (admin module)
+    │   │   ├── constants.py
+    │   │   ├── forms.py        (wtforms)
+    │   │   ├── __init__.py
+    │   │   ├── models.py
+    │   │   ├── views.py
+    │   ├── post                (post module)
+    │   │   ├── constants.py
+    │   │   ├── forms.py        (wtforms)
+    │   │   ├── __init__.py
+    │   │   ├── models.py
+    │   │   ├── views.py
     │   ├── user                (user module)
     │   │   ├── constants.py
     │   │   ├── forms.py        (wtforms)
