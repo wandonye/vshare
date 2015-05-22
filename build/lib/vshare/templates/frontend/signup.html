@@ -1,0 +1,13 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Sign up' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+<div class="center-block" style="width:300px;margin-top:40px;">
+    {{ render_form(url_for('frontend.signup'), form) }}
+Already have an account? <a href="{{ url_for('frontend.login') }}">Sign in</a>, please.
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Wish' %}
+
+{% extends "post/post.html" %}
+
+{% block body %}
+<div style="width:300px;margin-top:40px;">
+    {{ render_form(url_for('post.postwish'), form) }}
+</div>
+{% endblock %}
